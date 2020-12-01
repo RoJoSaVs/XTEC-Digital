@@ -1,0 +1,11 @@
+body {
+    background-color: #f7f6fb;
+}
+
+.page-button {
+    background-color:#00457c;
+    color:#ffffff;}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
