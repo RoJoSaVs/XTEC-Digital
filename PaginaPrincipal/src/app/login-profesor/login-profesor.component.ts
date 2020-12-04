@@ -1,4 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ConnectionService } from '../connection.service';
+import { LoginFormModel } from '../login-form.model';
+
 
 @Component({
   selector: 'app-login-profesor',
@@ -7,9 +13,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginProfesorComponent implements OnInit {
 
-  constructor() { }
+  formData: LoginFormModel= {
+    username: null,
+    password: null,
+  };
+
+  constructor(private http: HttpClient,
+    private service : ConnectionService,
+    private router: Router,
+    private route: ActivatedRoute) { }
+
+  readonly rootURL = 'http://localhost:55004/api/login';
 
   ngOnInit(): void {
   }
 
-}
+  onSubmit(form: NgForm) {
+    this.service.Post(this.formData,this.rootURL).subscribe(
+     response => {
+        if( response ===true){
+          this.router.navigate(['vista-profesor', this.formData.username.toString()]);
+        }
+        else{
+          alert("Usuario inválido, por favor verifique los datos");
+        }
+     },
+     error => {
+       alert("no se logro conectar con la base de datos");
+      }
+     );
+    }
+  }

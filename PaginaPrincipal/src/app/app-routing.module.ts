@@ -10,13 +10,20 @@ import { ConnectionService} from 'src/app/connection.service'
 import { LoginEstudianteComponent } from './login-estudiante/login-estudiante.component';
 import { LoginAdministradorComponent} from './login-administrador/login-administrador.component'
 import { LoginProfesorComponent } from './login-profesor/login-profesor.component';
+import { VistaProfesorComponent } from './vista-profesor/vista-profesor.component';
+import { VistaEstudianteComponent } from './vista-estudiante/vista-estudiante.component';
+import { VistaAdministradorComponent } from './vista-administrador/vista-administrador.component';
+
 
 
 const routes: Routes = [
   { path: '', component: PaginaDeInicioComponent},
   { path: 'login-profesor', component: LoginProfesorComponent},
   { path: 'login-estudiante', component: LoginEstudianteComponent},
-  { path: 'login-administrador', component: LoginAdministradorComponent}
+  { path: 'login-administrador', component: LoginAdministradorComponent},
+  { path: 'vista-administrador/:id', component: VistaAdministradorComponent },
+  { path: 'vista-profesor/:id', component: VistaEstudianteComponent },
+  { path: 'vista-estudiante/:id', component: VistaProfesorComponent }
 
 ];
 
