@@ -56,7 +56,7 @@ INSERT INTO ENTREGABLE(entregable_id,nota,observaciones,archivo_retroalimentacio
 
 
 ---------------------------------------------------------------------------
---------------INSERTA LOS DATOS DE LAS EVALUACIONES-------------------------
+--------------INSERTA LOS DATOS DE LAS EVALUACIONES------------------------
 ---------------------------------------------------------------------------
 INSERT INTO EVALUACION(evaluacion_id,nombre,fecha_entrega,grupal_individual,especificacion_archivo,porcentaje,rubro_id) VALUES
     ("1","STRAVIATEC",'2021-02-14',1,NULL,25,"1"),
@@ -64,3 +64,33 @@ INSERT INTO EVALUACION(evaluacion_id,nombre,fecha_entrega,grupal_individual,espe
     ("3","Octaniones en teoría de cuerdas",'2020-12-25',0,NULL,15,"11");
 
 
+---------------------------------------------------------------------------
+----------  archivo , estudiante-grupo,estudiante,estudiante-curso, grupo--
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE LAS CARPETAS----------------------------
+---------------------------------------------------------------------------
+INSERT INTO CARPETA(carpeta_id, nombre, ruta_url, grupo_id) VALUES
+	("1","DOCUMENTOS", "/ingreso/carpetas", "11"),
+	("23","EXAMENES", "/ingreso/evaluaciones/examenes", "21"),
+	("47","EVALUACIONES", "/ingreso/evaluaciones", "33"),
+	("4","GAAP", "/ingreso/elementos/gaap", "12");
+
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE LAS NOTICIAS----------------------------
+---------------------------------------------------------------------------
+INSERT INTO NOTICIA(noticia_id,titulo,mensaje,fecha,grupo_id) VALUES
+	("2","Examen evaluado", "en su examen obtuvo una nota de 98", '2021-01-17', "4"),
+	("3","Fecha de examen", "Su examen sera el dia jueves 12 de diciembre a las 3 pm, con duracion de 3 horas", '2020-12-04', "3"),
+	("4","Temas de examen", "Los temas del examen son del capitulo 1 al 3", '2020-12-10', "5");
+
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE LAS ARCHIVO----------------------------
+---------------------------------------------------------------------------
+INSERT INTO ARCHIVO(archivo_id,nombre,archivo_pdf,tamanio,fecha,carpeta_id) VALUES
+	("2","Examen Bases de Datos", "examen.pdf", 20,'2020-12-04',"4"),
+	("3","Archivo Adjunto Bases de Datos", "archivo1.pdf", 20,'2020-12-04',"47"),
+	("4","correos", "correosDeConsulta.pdf", 20,'2020-12-04',"8");
