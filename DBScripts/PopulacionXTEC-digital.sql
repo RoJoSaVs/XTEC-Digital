@@ -65,7 +65,7 @@ INSERT INTO EVALUACION(evaluacion_id,nombre,fecha_entrega,grupal_individual,espe
 
 
 ---------------------------------------------------------------------------
-----------  archivo , estudiante-grupo,estudiante,estudiante-curso, grupo--
+----------,estudiante-curso, --
 ---------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------
@@ -94,3 +94,31 @@ INSERT INTO ARCHIVO(archivo_id,nombre,archivo_pdf,tamanio,fecha,carpeta_id) VALU
 	("2","Examen Bases de Datos", "examen.pdf", 20,'2020-12-04',"4"),
 	("3","Archivo Adjunto Bases de Datos", "archivo1.pdf", 20,'2020-12-04',"47"),
 	("4","correos", "correosDeConsulta.pdf", 20,'2020-12-04',"8");
+
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE ESTUDIANTE------------------------
+---------------------------------------------------------------------------
+INSERT INTO ESTUDIANTE(carnet) VALUES
+	("2018114634"),
+	("2019109283"),
+	("2020109283"),
+	("2012178906");
+
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE GRUPO-----------------------------------
+---------------------------------------------------------------------------
+INSERT INTO GRUPO(grupo_id,matriculados,numero_grupo,cupo,anio,periodo,curso_id,profesor_id) VALUES
+	("CE2021-1",28,1,30,2018,'I Semestre',"CE2021","562856435684567"),
+	("FI3454-3",40,3,40,2020,'II Semestre',"FI3454","334677773684317"),
+	("MA9651-17",60,17,63,2020,'II Semestre',"MA9651","262656436684367");
+
+
+---------------------------------------------------------------------------
+--------------INSERTA LOS DATOS DE ESTUDIANTE-CURSO------------------------
+---------------------------------------------------------------------------
+INSERT INTO ESTUDIANTE_CURSO(estudiante_id, curso_id) VALUES
+	("2018114634","CE2056"),
+	("2019109283","FI3454"),
+	("2012178906","FI3454");
