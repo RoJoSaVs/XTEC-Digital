@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConnectionService } from '../connection.service';
 import { LoginFormModel } from '../login-form.model';
+import { pruebaModel } from '../pruba.model';
 
 
 @Component({
@@ -18,20 +19,39 @@ export class LoginProfesorComponent implements OnInit {
     password: null,
   };
 
+  formPrueba: pruebaModel= {
+    Carnet: "651656056",
+  };
+
   constructor(private http: HttpClient,
     private service : ConnectionService,
     private router: Router,
     private route: ActivatedRoute) { }
 
-  readonly rootURL = 'http://localhost:55004/api/login';
+  readonly rootURL = 'https://xtecdigitalsqlbdmg5.azurewebsites.net/api/estudiantes';
 
   ngOnInit(): void {
   }
 
   onSubmit(form: NgForm) {
-    this.service.Post(this.formData,this.rootURL).subscribe(
+    /*
+    this.service.Get('https://xtecdigitalsqlbdmg5.azurewebsites.net/api/estudiantes').subscribe(
+      response => {
+         if( response === true){
+           this.router.navigate(['vista-profesor', this.formData.username.toString()]);
+         }
+         else{
+           alert("Usuario inválido, por favor verifique los datos");
+         }
+      },
+      error => {
+        alert("no se logro conectar con la base de datos");
+       }
+      );*/
+
+    /*this.service.Post(this.formPrueba,this.rootURL).subscribe(
      response => {
-        if( response ===true){
+        if( response === true){
           this.router.navigate(['vista-profesor', this.formData.username.toString()]);
         }
         else{
@@ -41,6 +61,6 @@ export class LoginProfesorComponent implements OnInit {
      error => {
        alert("no se logro conectar con la base de datos");
       }
-     );
+     );*/
     }
   }

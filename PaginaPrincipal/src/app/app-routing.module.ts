@@ -13,6 +13,7 @@ import { LoginProfesorComponent } from './login-profesor/login-profesor.componen
 import { VistaProfesorComponent } from './vista-profesor/vista-profesor.component';
 import { VistaEstudianteComponent } from './vista-estudiante/vista-estudiante.component';
 import { VistaAdministradorComponent } from './vista-administrador/vista-administrador.component';
+import { GestionDocumentosComponent } from './gestion-documentos/gestion-documentos.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'login-administrador', component: LoginAdministradorComponent},
   { path: 'vista-administrador/:id', component: VistaAdministradorComponent },
   { path: 'vista-profesor/:id', component: VistaEstudianteComponent },
-  { path: 'vista-estudiante/:id', component: VistaProfesorComponent }
+  { path: 'vista-estudiante/:id', component: VistaProfesorComponent },
+  { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
 
 ];
 
