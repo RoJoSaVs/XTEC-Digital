@@ -39,13 +39,13 @@ namespace MongoDBApi.Controllers
         /// <returns>Un ok en caso de éxito</returns>
         [HttpPost]
         [Route("api/admin/login")]
-        public IActionResult Login([FromBody] Login login)
+        public bool Login([FromBody] Login login)
         {
             var resultado = _repo.verificarLogin(login);
 
             if (resultado == false)
-                return BadRequest("Cédula o contaseña incorrectos");
-            return Ok("Ha iniciado sesión como: " + login.username);
+                return false;
+            return true;
         }
     }
 }
