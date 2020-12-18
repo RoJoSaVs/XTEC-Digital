@@ -28,26 +28,12 @@ export class LoginProfesorComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-  readonly rootURL = 'http://xtecdigitalmongodb.azurewebsites.net/api/estudiantes';
+  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/profesor/login';
 
   ngOnInit(): void {
   }
 
   onSubmit(form: NgForm) {
-    /*
-    this.service.Get('https://xtecdigitalsqlbdmg5.azurewebsites.net/api/estudiantes').subscribe(
-      response => {
-         if( response === true){
-           this.router.navigate(['vista-profesor', this.formData.username.toString()]);
-         }
-         else{
-           alert("Usuario inválido, por favor verifique los datos");
-         }
-      },
-      error => {
-        alert("no se logro conectar con la base de datos");
-       }
-      );*/
 
     this.service.Post(this.formData,this.rootURL).subscribe(
      response => {

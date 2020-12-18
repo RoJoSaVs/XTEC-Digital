@@ -22,7 +22,7 @@ export class LoginAdministradorComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-  readonly rootURL = 'http://localhost:55004/api/login';
+  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/admin/login';
 
   ngOnInit(): void {
   }

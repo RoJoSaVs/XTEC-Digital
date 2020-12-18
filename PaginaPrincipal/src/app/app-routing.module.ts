@@ -25,8 +25,8 @@ const routes: Routes = [
   { path: 'login-estudiante', component: LoginEstudianteComponent},
   { path: 'login-administrador', component: LoginAdministradorComponent},
   { path: 'vista-administrador/:id', component: VistaAdministradorComponent },
-  { path: 'vista-profesor/:id', component: VistaEstudianteComponent },
-  { path: 'vista-estudiante/:id', component: VistaProfesorComponent },
+  { path: 'vista-profesor/:id', component: VistaProfesorComponent },
+  { path: 'vista-estudiante/:id', component: VistaEstudianteComponent },
   { path: 'subir-excel/:id', component: SubirExcelComponent },
   { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
 
