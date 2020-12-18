@@ -1,1 +1,465 @@
-<p>subir-excel-manual works!</p>
+<br>
+<br>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,0)"> 
+    <div class="form-row">
+        <div class="col">
+        <label >Carnet</label>
+        <input type="text" id="Carnet" name="Carnet" [(ngModel)]="formData.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" [(ngModel)]="formData.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Apellido1</label>
+        <input type="text" id="Apellido1" name="Apellido1" [(ngModel)]="formData.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Apellido2</label>
+        <input type="text" id="Apellido2" name="Apellido2" [(ngModel)]="formData.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >IdCurso</label>
+        <input type="text" id="IdCurso" name="IdCurso" [(ngModel)]="formData.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >N.Curso</label>
+        <input type="text" id="NombreCurso" name="NombreCurso" [(ngModel)]="formData.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        <label >Ano</label>
+        <input type="text" id="Ano" name="Ano" [(ngModel)]="formData.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Semestre</label>
+        <input type="text" id="Semestre" name="Semestre" [(ngModel)]="formData.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Grupo</label>
+        <input type="text" id="Grupo" name="Grupo" [(ngModel)]="formData.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >IdProf</label>
+        <input type="text" id="IdProfesor" name="IdProfesor" [(ngModel)]="formData.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >N.Prof</label>
+        <input type="text" id="NombreProfesor" name="NombreProfesor" [(ngModel)]="formData.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >A.1Prof</label>
+        <input type="text" id="Apellido1Profesor" name="Apellido1Profesor" [(ngModel)]="formData.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >A.2Prof</label>
+        <input type="text" id="Apellido2Profesor" name="Apellido2Profesor" [(ngModel)]="formData.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        <label >Creditos</label>
+        <input type="text" id="Creditos" name="Creditos"   class="form-control" >
+      </div>
+        <div class="col">
+        <label >Carrera</label>
+        <input type="text" id="Carrera" name="Carrera"   class="form-control" >
+      </div>
+        <div class="col">
+        <label >Cupo</label>
+        <input type="text" id="Cupo" name="Cupo"   class="form-control" >
+      </div>
+      <div class="col">
+        <label ></label>
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+<!-- *********************************************************************************-->
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,1)"> 
+    <div class="form-row">
+        <div class="col">
+        
+        <input type="text" id="Carnet1" name="Carnet1" [(ngModel)]="formData1.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Nombre1" name="Nombre1" [(ngModel)]="formData1.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido11" name="Apellido11" [(ngModel)]="formData1.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido21" name="Apellido21" [(ngModel)]="formData1.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdCurso1" name="IdCurso1" [(ngModel)]="formData1.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreCurso1" name="NombreCurso1" [(ngModel)]="formData1.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        
+        <input type="text" id="Ano1" name="Ano1" [(ngModel)]="formData1.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Semestre1" name="Semestre1" [(ngModel)]="formData1.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Grupo1" name="Grupo1" [(ngModel)]="formData1.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdProfesor1" name="IdProfesor1" [(ngModel)]="formData1.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreProfesor1" name="NombreProfesor1" [(ngModel)]="formData1.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido1Profesor1" name="Apellido1Profesor1" [(ngModel)]="formData1.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido2Profesor1" name="Apellido2Profesor1" [(ngModel)]="formData1.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Creditos1" name="Creditos1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Carrera1" name="Carrera1"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Cupo1" name="Cupo1"  class="form-control" >
+      </div>
+      <div class="col">
+        
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+<!-- *********************************************************************************-->
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,2)"> 
+    <div class="form-row">
+        <div class="col">
+        
+        <input type="text" id="Carnet2" name="Carnet2" [(ngModel)]="formData2.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Nombre2" name="Nombre2" [(ngModel)]="formData2.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido12" name="Apellido12" [(ngModel)]="formData2.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido22" name="Apellido22" [(ngModel)]="formData2.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdCurso2" name="IdCurso2" [(ngModel)]="formData2.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreCurso2" name="NombreCurso2" [(ngModel)]="formData2.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        
+        <input type="text" id="Ano2" name="Ano2" [(ngModel)]="formData2.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Semestre2" name="Semestre2" [(ngModel)]="formData2.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Grupo2" name="Grupo2" [(ngModel)]="formData2.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdProfesor2" name="IdProfesor2" [(ngModel)]="formData2.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreProfesor2" name="NombreProfesor2" [(ngModel)]="formData2.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido1Profesor2" name="Apellido1Profesor2" [(ngModel)]="formData2.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido2Profesor2" name="Apellido2Profesor2" [(ngModel)]="formData2.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Creditos2" name="Creditos2"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Carrera2" name="Carrera2"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Cupo2" name="Cupo2"   class="form-control" >
+      </div>
+      <div class="col">
+        
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+<!-- *********************************************************************************-->
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,3)"> 
+    <div class="form-row">
+        <div class="col">
+        
+        <input type="text" id="Carnet3" name="Carnet3" [(ngModel)]="formData3.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Nombre3" name="Nombre3" [(ngModel)]="formData3.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido13" name="Apellido13" [(ngModel)]="formData3.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido23" name="Apellido23" [(ngModel)]="formData3.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdCurso3" name="IdCurso3" [(ngModel)]="formData3.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreCurso3" name="NombreCurso3" [(ngModel)]="formData3.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        
+        <input type="text" id="Ano3" name="Ano3" [(ngModel)]="formData3.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Semestre3" name="Semestre3" [(ngModel)]="formData3.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Grupo3" name="Grupo3" [(ngModel)]="formData3.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdProfesor3" name="IdProfesor3" [(ngModel)]="formData3.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreProfesor3" name="NombreProfesor3" [(ngModel)]="formData3.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido1Profesor3" name="Apellido1Profesor3" [(ngModel)]="formData3.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido2Profesor3" name="Apellido2Profesor3" [(ngModel)]="formData3.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Creditos3" name="Creditos3"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Carrera3" name="Carrera3"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Cupo3" name="Cupo3"   class="form-control" >
+      </div>
+      <div class="col">
+        
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+<!-- *********************************************************************************-->
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,4)"> 
+    <div class="form-row">
+        <div class="col">
+        
+        <input type="text" id="Carnet4" name="Carnet4" [(ngModel)]="formData4.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Nombre4" name="Nombre4" [(ngModel)]="formData4.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido14" name="Apellido14" [(ngModel)]="formData4.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido24" name="Apellido24" [(ngModel)]="formData4.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdCurso4" name="IdCurso4" [(ngModel)]="formData4.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreCurso4" name="NombreCurso4" [(ngModel)]="formData4.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        
+        <input type="text" id="Ano4" name="Ano4" [(ngModel)]="formData4.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Semestre4" name="Semestre4" [(ngModel)]="formData4.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Grupo4" name="Grupo4" [(ngModel)]="formData4.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdProfesor4" name="IdProfesor4" [(ngModel)]="formData4.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreProfesor4" name="NombreProfesor4" [(ngModel)]="formData4.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido1Profesor4" name="Apellido1Profesor4" [(ngModel)]="formData4.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido2Profesor4" name="Apellido2Profesor4" [(ngModel)]="formData4.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Creditos4" name="Creditos4"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Carrera4" name="Carrera4"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Cupo4" name="Cupo4"   class="form-control" >
+      </div>
+      <div class="col">
+        
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+<!-- *********************************************************************************-->
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form,5)"> 
+    <div class="form-row">
+        <div class="col">
+        
+        <input type="text" id="Carnet5" name="Carnet5" [(ngModel)]="formData5.Carnet"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Nombre5" name="Nombre5" [(ngModel)]="formData5.Nombre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido15" name="Apellido15" [(ngModel)]="formData5.Apellido1"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido25" name="Apellido25" [(ngModel)]="formData5.Apellido2"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdCurso5" name="IdCurso5" [(ngModel)]="formData5.IdCurso"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreCurso5" name="NombreCurso5" [(ngModel)]="formData5.NombreCurso"  class="form-control" >
+      </div>
+        <div class="col"> 
+        
+        <input type="text" id="Ano5" name="Ano5" [(ngModel)]="formData5.Ano"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Semestre5" name="Semestre5" [(ngModel)]="formData5.Semestre"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Grupo5" name="Grupo5" [(ngModel)]="formData5.Grupo"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="IdProfesor5" name="IdProfesor5" [(ngModel)]="formData5.IdProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="NombreProfesor5" name="NombreProfesor5" [(ngModel)]="formData5.NombreProfesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido1Profesor5" name="Apellido1Profesor5" [(ngModel)]="formData5.Apellido1Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Apellido2Profesor5" name="Apellido2Profesor5" [(ngModel)]="formData5.Apellido2Profesor"  class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Creditos5" name="Creditos5"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Carrera5" name="Carrera5"   class="form-control" >
+      </div>
+        <div class="col">
+        
+        <input type="text" id="Cupo5" name="Cupo5"   class="form-control" >
+      </div>
+      <div class="col">
+        
+        <button class="btn btn-light btn-block page-button" type="submit">✔</button>
+      </div>
+    </div>    
+</form>
+
+<br>
+
+
+<div class="col-6 mx-auto">
+      <button class="btn btn-light btn-lg btn-block page-button"  (click)="enviar()">Subir</button>
+    
+</div>
+
+
+

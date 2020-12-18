@@ -16,6 +16,8 @@ import { VistaEstudianteComponent } from './vista-estudiante/vista-estudiante.co
 import { VistaAdministradorComponent } from './vista-administrador/vista-administrador.component';
 import { GestionDocumentosComponent } from './gestion-documentos/gestion-documentos.component';
 import { SubirExcelComponent } from './subir-excel/subir-excel.component';
+import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manual.component';
+import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
 
 
 
@@ -28,6 +30,9 @@ const routes: Routes = [
   { path: 'vista-profesor/:id', component: VistaProfesorComponent },
   { path: 'vista-estudiante/:id', component: VistaEstudianteComponent },
   { path: 'subir-excel/:id', component: SubirExcelComponent },
+  { path: 'subir-excel/:id', component: SubirExcelComponent },
+  { path: 'gestion-noticias/:id', component: GestionNoticiasComponent },
+  { path: 'subir-manual/:id', component: SubirExcelManualComponent },
   { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
 
 ];

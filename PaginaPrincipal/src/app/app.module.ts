@@ -21,6 +21,7 @@ import { GestionDocumentosComponent } from './gestion-documentos/gestion-documen
 import { GestionRubrosComponent } from './gestion-rubros/gestion-rubros.component';
 import { SubirExcelComponent } from './subir-excel/subir-excel.component';
 import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manual.component';
+import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manu
     GestionDocumentosComponent,
     GestionRubrosComponent,
     SubirExcelManualComponent,
+    GestionNoticiasComponent,
   ],
   imports: [
     BrowserModule,

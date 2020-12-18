@@ -9,6 +9,8 @@ export class VistaProfesorComponent implements OnInit {
 
   constructor() { }
 
+  username='';
+
   ngOnInit(): void {
   }
 

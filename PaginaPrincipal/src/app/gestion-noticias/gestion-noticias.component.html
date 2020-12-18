@@ -1,0 +1,143 @@
+<!--
+
+<div class="d-flex flex-row bd-highlight justify-content-around" >
+    <div class="col-6 mx-auto w-25">
+      <h1>Publicar noticias</h1>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  
+        <div class="form-group">
+          <label for="crearCuentaForm">Titulo</label>
+          <input type="text" id="Titulo" name="Titulo" [(ngModel)]="formData.Titulo" class="form-control"><br>
+        </div>
+
+        <div class="form-group">
+          <label for="crearCuentaForm">Mensaje</label>
+          <input type="text" id="Mensaje" name="Mensaje" [(ngModel)]="formData.Mensaje" class="form-control"><br>
+        </div>
+  
+        <div class="form-group">
+          <label for="crearCuentaForm">Fecha </label>
+          <input type="date" id="Fecha" name="Fecha" [(ngModel)]="formData.Fecha" class="form-control" min="1900-01-01" max="2100-12-31"><br>
+        </div>
+  
+        <div class="form-group">
+          <label for="crearCuentaForm">Curso</label>
+          <input type="text" id="Curso" name="Curso" [(ngModel)]="formData.Curso" class="form-control"><br>
+        </div>
+
+        <div class="form-group">
+          <label for="crearCuentaForm">Grupo</label>
+          <input type="text" id="Grupo" name="Grupo" [(ngModel)]="formData.Grupo" class="form-control"><br>
+        </div>
+
+
+        <br>
+        <br>
+
+        <button class="btn btn-light btn-lg btn-block page-button" type="submit">Submit</button>
+      </form>
+      <br>
+      <br>
+      <br>
+  
+    </div>
+
+    carga la ventana modal donde se permite actualizar la tabla
+    <div class="w-100">
+      <br>
+      <br>
+      <br>
+      <div class = "container">
+          <table class = "table  table-bordered table-striped">
+              <thead>
+                  <tr>
+                      <th>Titulo</th>
+                      <th>Mensaje</th>
+                      <th>Fecha</th>
+                      <th>Curso</th>
+                      <th>Grupo</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let challenge of challenges">
+                      <td><span>{{challenge.Titulo}}</span></td>
+                      <td><span>{{challenge.Mensaje}}</span></td>
+                      <td><span>{{challenge.Fecha}}</span></td>
+                      <td><span>{{challenge.Curso}}</span></td>
+                      <td><span>{{challenge.Grupo}}</span></td>
+                      <div>
+                      <button type="button" class="btn btn-outline-danger" (click)="delete(challenge.challenge_identifier)">Eliminar</button>
+                      <button type="button" class="btn btn-outline-success" (click)="save_id(challenge.challenge_identifier)" data-toggle="modal" data-target="#myModalNorm">Actualizar</button>
+                      </div>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">
+                    Actualizar datos
+                </h3>
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+            </div>
+            
+            
+            <div class="modal-body">
+                
+              <form #form="ngForm" autocomplete="off" (submit)="update(form)">
+  
+                <div class="form-group">
+                  <label for="crearCuentaForm">Nombre del reto</label>
+                  <input type="text" id="name_challenge_up" name="name_challenge_up" [(ngModel)]="formUpdate.name_challenge" class="form-control"><br>
+                </div>
+        
+                <div class="form-group">
+                  <label for="crearCuentaForm">Descrpición</label>
+                  <input type="text" id="description_up" name="description_up" [(ngModel)]="formUpdate.description" class="form-control"><br>
+                </div>
+          
+                <div class="form-group">
+                  <label for="crearCuentaForm">Fecha inicial del reto:</label>
+                  <input type="date" id="start_date_up" name="start_date_up" [(ngModel)]="formUpdate.start_date" class="form-control" min="1900-01-01" max="2100-12-31"><br>
+                </div>
+        
+                <div class="form-group">
+                    <label for="crearCuentaForm">Fecha final del reto:</label>
+                    <input type="date" id="end_date_up" name="end_date_up" [(ngModel)]="formUpdate.end_date" class="form-control" min="1900-01-01" max="2100-12-31"><br>
+                  </div>
+          
+                <div class="form-group">
+                  <label >Actividad</label>
+                  <div>
+                    <select id="type_challenge_up" name="type_challenge_up" [(ngModel)]="formUpdate.type_challenge">
+                      <option value="Correr">Correr</option>
+                      <option value="Nadar">Nadar</option>
+                      <option value="Ciclismo">Ciclismo</option>
+                      <option value="Kayak">Kayak</option>
+                      <option value="Caminata">Caminata</option>
+                    </select> 
+                  </div>
+                </div>
+                <br>
+                <br>
+                
+                <button class="btn btn-light btn-lg btn-block page-button" type="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
