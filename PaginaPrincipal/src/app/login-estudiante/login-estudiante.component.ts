@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConnectionService } from '../connection.service';
-import { LoginFormModel } from '../login-form.model';
+import { ConnectionService } from '../services/connection.service';
+import { LoginFormModel } from '../services/login-form.model';
 
 
 @Component({
@@ -23,10 +23,11 @@ export class LoginEstudianteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-  readonly rootURL = 'http://localhost:55004/api/login';
+  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/estudiante/login';
 
   ngOnInit(): void {
   }
+
 
   onSubmit(form: NgForm) {
     this.service.Post(this.formData,this.rootURL).subscribe(
@@ -39,7 +40,7 @@ export class LoginEstudianteComponent implements OnInit {
         }
      },
      error => {
-       alert("no se logro conectar con la base de datos");
+       alert("no se logro conectar con el servidor");
       }
      );
     }

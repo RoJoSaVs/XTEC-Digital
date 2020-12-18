@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConnectionService } from '../connection.service';
-import { LoginFormModel } from '../login-form.model';
-import { pruebaModel } from '../pruba.model';
+import { ConnectionService } from '../services/connection.service';
+import { LoginFormModel } from '../services/login-form.model';
+import { pruebaModel } from '../services/prueba.model';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class LoginProfesorComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
-  readonly rootURL = 'https://xtecdigitalsqlbdmg5.azurewebsites.net/api/estudiantes';
+  readonly rootURL = 'http://xtecdigitalmongodb.azurewebsites.net/api/estudiantes';
 
   ngOnInit(): void {
   }
@@ -49,7 +49,7 @@ export class LoginProfesorComponent implements OnInit {
        }
       );*/
 
-    /*this.service.Post(this.formPrueba,this.rootURL).subscribe(
+    this.service.Post(this.formData,this.rootURL).subscribe(
      response => {
         if( response === true){
           this.router.navigate(['vista-profesor', this.formData.username.toString()]);
@@ -59,8 +59,8 @@ export class LoginProfesorComponent implements OnInit {
         }
      },
      error => {
-       alert("no se logro conectar con la base de datos");
+       alert("no se logro conectar con el servidor");
       }
-     );*/
+     );
     }
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-vista-administrador',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VistaAdministradorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
+
+  username:String;  
 
   ngOnInit(): void {
+    this.route.params.subscribe(event => {
+      this.username = event.id;
+     });
   }
 
 }

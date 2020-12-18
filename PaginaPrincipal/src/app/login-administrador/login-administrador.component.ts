@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConnectionService } from '../connection.service';
-import { LoginFormModel } from '../login-form.model';
+import { ConnectionService } from '../services/connection.service';
+import { LoginFormModel } from '../services/login-form.model';
 
 @Component({
   selector: 'app-login-administrador',
@@ -38,7 +38,7 @@ export class LoginAdministradorComponent implements OnInit {
         }
      },
      error => {
-       alert("no se logro conectar con la base de datos");
+       alert("no se logro conectar con el servidor");
       }
      );
     }

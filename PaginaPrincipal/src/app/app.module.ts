@@ -19,6 +19,8 @@ import { LoginAdministradorComponent } from './login-administrador/login-adminis
 import { GestionCursosComponent } from './gestion-cursos/gestion-cursos.component';
 import { GestionDocumentosComponent } from './gestion-documentos/gestion-documentos.component';
 import { GestionRubrosComponent } from './gestion-rubros/gestion-rubros.component';
+import { SubirExcelComponent } from './subir-excel/subir-excel.component';
+
 
 @NgModule({
   declarations: [
