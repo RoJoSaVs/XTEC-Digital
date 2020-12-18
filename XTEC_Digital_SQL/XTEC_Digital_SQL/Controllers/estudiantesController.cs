@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using XTEC_Digital_SQL.Models;
+using XTEC_Digital_SQL.Models.MongoModels;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -49,7 +53,7 @@ namespace XTEC_Digital_SQL.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Estudiante estudianteModel)
+        public ActionResult Post([FromBody] Estudiante estudianteModel)
         {
             try
             {
@@ -97,6 +101,51 @@ namespace XTEC_Digital_SQL.Controllers
             {
                 return BadRequest("Eliminacion no realizada");
             }
+        }
+
+        [HttpGet("test")]
+        public ActionResult TestSync()
+        {
+            try
+            {
+                List<EstudianteMongo> estudianteMongos = new List<EstudianteMongo>();
+                List<Estudiante> estudiantes = new List<Estudiante>();
+                
+                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
+                {
+                    estudiantes = (from d in db.Estudiantes
+                                select d).ToList();
+                    var response = GetAsync("http://xtecmongodb.azurewebsites.net/api/estudiante/info/all");
+                    var result = response.Result;
+                    if (result != null)
+                    {
+                        estudianteMongos = JsonConvert.DeserializeObject<List<EstudianteMongo>>(result);
+                    }
+                    foreach (var estudianteMongo in estudianteMongos)
+                    {
+                        Estudiante estudiante = db.Estudiantes.Find(estudianteMongo.Carnet);
+                        if (estudiante == null)
+                        {
+                            Estudiante estudianteInsert = new Estudiante();
+                            estudianteInsert.Carnet = estudianteMongo.Carnet;
+                            db.Estudiantes.Add(estudianteInsert);
+                            db.SaveChanges();
+                        }
+                    }
+                return Ok(result);
+                }
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        public async Task<string> GetAsync(string uri)
+        {
+            var httpClient = new HttpClient();
+            var content = await httpClient.GetStringAsync(uri);
+            return content;
         }
     }
 }

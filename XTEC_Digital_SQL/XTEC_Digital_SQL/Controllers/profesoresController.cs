@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using XTEC_Digital_SQL.Models;
+using XTEC_Digital_SQL.Models.MongoModels;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -69,8 +73,8 @@ namespace XTEC_Digital_SQL.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        /*public void Put(string id, [FromBody] Curso cursoModel)
+        /*[HttpPut("{id}")]
+        public void Put(string id, [FromBody] Curso cursoModel)
         {
             using (XTEC_DigitalContext db = new XTEC_DigitalContext())
             {
@@ -100,6 +104,51 @@ namespace XTEC_Digital_SQL.Controllers
             {
                 return BadRequest("Eliminacion no realizada");
             }
+        }
+
+        [HttpGet("test")]
+        public ActionResult TestSync()
+        {
+            try
+            {
+                List<ProfesorMongo> profesorMongos = new List<ProfesorMongo>();
+                List<Profesor> profesors = new List<Profesor>();
+
+                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
+                {
+                    profesors = (from d in db.Profesors
+                                   select d).ToList();
+                    var response = GetAsync("http://xtecmongodb.azurewebsites.net/api/profesores/cedulas");
+                    var result = response.Result;
+                    if (result != null)
+                    {
+                        profesorMongos = JsonConvert.DeserializeObject<List<ProfesorMongo>>(result);
+                    }
+                    foreach (var profesorMongo in profesorMongos)
+                    {
+                        Profesor profesor = db.Profesors.Find(profesorMongo.Cedula);
+                        if (profesor == null)
+                        {
+                            Profesor profesorInsert = new Profesor();
+                            profesorInsert.Cedula = profesorMongo.Cedula;
+                            db.Profesors.Add(profesorInsert);
+                            db.SaveChanges();
+                        }
+                    }
+                    return Ok(result);
+                }
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+        public async Task<string> GetAsync(string uri)
+        {
+            var httpClient = new HttpClient();
+            var content = await httpClient.GetStringAsync(uri);
+            return content;
         }
     }
 }

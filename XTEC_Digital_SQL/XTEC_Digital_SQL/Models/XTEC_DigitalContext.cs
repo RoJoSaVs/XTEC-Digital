@@ -55,7 +55,6 @@ namespace XTEC_Digital_SQL.Models
                     .HasColumnName("archivo_id");
 
                 entity.Property(e => e.ArchivoPdf)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("archivo_pdf");
 
@@ -84,7 +83,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<Carpetum>(entity =>
             {
                 entity.HasKey(e => e.CarpetaId)
-                    .HasName("PK__CARPETA__05E0DB8E446FA4B7");
+                    .HasName("PK__CARPETA__05E0DB8E0C096CA2");
 
                 entity.ToTable("CARPETA");
 
@@ -104,7 +103,6 @@ namespace XTEC_Digital_SQL.Models
                     .HasColumnName("nombre");
 
                 entity.Property(e => e.RutaUrl)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("ruta_url");
 
@@ -117,7 +115,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<Curso>(entity =>
             {
                 entity.HasKey(e => e.Codigo)
-                    .HasName("PK__CURSO__40F9A20786ADF940");
+                    .HasName("PK__CURSO__40F9A20718FE63F2");
 
                 entity.ToTable("CURSO");
 
@@ -136,7 +134,7 @@ namespace XTEC_Digital_SQL.Models
 
                 entity.Property(e => e.Nombre)
                     .IsRequired()
-                    .HasMaxLength(30)
+                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("nombre");
             });
@@ -151,12 +149,10 @@ namespace XTEC_Digital_SQL.Models
                     .HasColumnName("entregable_id");
 
                 entity.Property(e => e.ArchivoEntregable)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("archivo_entregable");
 
                 entity.Property(e => e.ArchivoRetroalimentacion)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("archivo_retroalimentacion");
 
@@ -170,7 +166,6 @@ namespace XTEC_Digital_SQL.Models
                 entity.Property(e => e.Nota).HasColumnName("nota");
 
                 entity.Property(e => e.Observaciones)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("observaciones");
 
@@ -185,7 +180,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<Estudiante>(entity =>
             {
                 entity.HasKey(e => e.Carnet)
-                    .HasName("PK__ESTUDIAN__4CDEAA6F84FDCDFE");
+                    .HasName("PK__ESTUDIAN__4CDEAA6F779CD947");
 
                 entity.ToTable("ESTUDIANTE");
 
@@ -198,7 +193,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<EstudianteCurso>(entity =>
             {
                 entity.HasKey(e => new { e.EstudianteId, e.CursoId })
-                    .HasName("PK__ESTUDIAN__B7EEB3FB859D1926");
+                    .HasName("PK__ESTUDIAN__B7EEB3FB7865A088");
 
                 entity.ToTable("ESTUDIANTE_CURSO");
 
@@ -228,7 +223,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<EstudianteGrupo>(entity =>
             {
                 entity.HasKey(e => new { e.EstudianteId, e.GrupoId })
-                    .HasName("PK__ESTUDIAN__AB3F17F76D8B6213");
+                    .HasName("PK__ESTUDIAN__AB3F17F77BBAF8B0");
 
                 entity.ToTable("ESTUDIANTE_GRUPO");
 
@@ -265,7 +260,6 @@ namespace XTEC_Digital_SQL.Models
                     .HasColumnName("evaluacion_id");
 
                 entity.Property(e => e.EspecificacionArchivo)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("especificacion_archivo");
 
@@ -340,7 +334,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<Noticium>(entity =>
             {
                 entity.HasKey(e => e.NoticiaId)
-                    .HasName("PK__NOTICIA__4B568A6CFD9F0D8B");
+                    .HasName("PK__NOTICIA__4B568A6C1B17AF66");
 
                 entity.ToTable("NOTICIA");
 
@@ -348,6 +342,11 @@ namespace XTEC_Digital_SQL.Models
                     .HasMaxLength(15)
                     .IsUnicode(false)
                     .HasColumnName("noticia_id");
+
+                entity.Property(e => e.Autor)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("autor");
 
                 entity.Property(e => e.Fecha)
                     .HasColumnType("date")
@@ -359,7 +358,6 @@ namespace XTEC_Digital_SQL.Models
                     .HasColumnName("grupo_id");
 
                 entity.Property(e => e.Mensaje)
-                    .HasMaxLength(1)
                     .IsUnicode(false)
                     .HasColumnName("mensaje");
 
@@ -377,7 +375,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<Profesor>(entity =>
             {
                 entity.HasKey(e => e.Cedula)
-                    .HasName("PK__PROFESOR__415B7BE4C1CD9ADF");
+                    .HasName("PK__PROFESOR__415B7BE431D4C134");
 
                 entity.ToTable("PROFESOR");
 
@@ -390,7 +388,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<ProfesorCurso>(entity =>
             {
                 entity.HasKey(e => new { e.ProfesorId, e.CursoId })
-                    .HasName("PK__PROFESOR__51E795559CCB2A10");
+                    .HasName("PK__PROFESOR__51E79555936D2082");
 
                 entity.ToTable("PROFESOR_CURSO");
 
@@ -447,7 +445,7 @@ namespace XTEC_Digital_SQL.Models
             modelBuilder.Entity<SubGrupo>(entity =>
             {
                 entity.HasKey(e => new { e.SubGrupoId, e.EstudianteId, e.GrupoId, e.EntregableId })
-                    .HasName("PK__SUB_GRUP__CD909323C1AB394C");
+                    .HasName("PK__SUB_GRUP__CD9093230DD1BC53");
 
                 entity.ToTable("SUB_GRUPO");
 
