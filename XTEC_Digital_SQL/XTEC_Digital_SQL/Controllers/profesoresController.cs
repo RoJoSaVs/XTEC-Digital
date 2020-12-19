@@ -17,23 +17,6 @@ namespace XTEC_Digital_SQL.Controllers
     [ApiController]
     public class profesoresController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult Get()
-        {
-            try
-            {
-                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
-                {
-                    var list = (from d in db.Profesors
-                                select d).ToList();
-                    return Ok(list);
-                }
-            }
-            catch
-            {
-                return BadRequest("No se pudo mostrar la informacion");
-            }
-        }
 
         [HttpGet("{id}")]
         public ActionResult Get(string id)
@@ -106,7 +89,25 @@ namespace XTEC_Digital_SQL.Controllers
             }
         }
 
-        [HttpGet("test")]
+        /*[HttpGet]
+        public ActionResult Get()
+        {
+            try
+            {
+                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
+                {
+                    var list = (from d in db.Profesors select d).ToList();
+                    return Ok(list);
+                }
+            }
+            catch
+            {
+                return BadRequest("No se pudo mostrar la informacion");
+            }
+        }
+
+        [HttpGet("test")]*/
+        [HttpGet]
         public ActionResult TestSync()
         {
             try
@@ -135,12 +136,14 @@ namespace XTEC_Digital_SQL.Controllers
                             db.SaveChanges();
                         }
                     }
-                    return Ok(result);
+                    var list = (from d in db.Profesors
+                                select d).ToList();
+                    return Ok(list);
                 }
             }
             catch
             {
-                return BadRequest();
+                return BadRequest("No se pudo mostrar la informacion");
             }
         }
 

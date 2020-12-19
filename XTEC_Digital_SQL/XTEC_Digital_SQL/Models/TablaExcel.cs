@@ -9,12 +9,12 @@ namespace XTEC_Digital_SQL.Models
     public partial class TablaExcel
     {
         public int Id { get; set; }
-        public string Anio { get; set; }
-        public string Periodo { get; set; }
-        public string CodigoCurso { get; set; }
-        public int NumeroGrupo { get; set; }
-        public string CarnetEstudiante { get; set; }
-        public string Profesor1 { get; set; }
+        public string Ano { get; set; }
+        public string Semestre { get; set; }
+        public string IdCurso { get; set; }
+        public string Grupo { get; set; }
+        public string Carnet { get; set; }
+        public string IdProfesor { get; set; }
     }
 }
     /*{

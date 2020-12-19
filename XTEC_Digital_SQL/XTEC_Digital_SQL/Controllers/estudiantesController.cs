@@ -17,23 +17,6 @@ namespace XTEC_Digital_SQL.Controllers
     [ApiController]
     public class estudiantesController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult Get()
-        {
-            try
-            {
-                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
-                {
-                    var list = (from d in db.Estudiantes
-                                select d).ToList();
-                    return Ok(list);
-                }
-            }
-            catch
-            {
-                return BadRequest("Informacion no obtenida");
-            }
-        }
 
         [HttpGet("{id}")]
         public ActionResult Get(string id)
@@ -103,7 +86,25 @@ namespace XTEC_Digital_SQL.Controllers
             }
         }
 
-        [HttpGet("test")]
+        /*[HttpGet]
+        public ActionResult Get()
+        {
+            try
+            {
+                using (XTEC_DigitalContext db = new XTEC_DigitalContext())
+                {
+                    var list = (from d in db.Estudiantes
+                                select d).ToList();
+                    return Ok(list);
+                }
+            }
+            catch
+            {
+                return BadRequest("Informacion no obtenida");
+            }
+        }
+        [HttpGet("test")]*/
+        [HttpGet]
         public ActionResult TestSync()
         {
             try
@@ -132,12 +133,14 @@ namespace XTEC_Digital_SQL.Controllers
                             db.SaveChanges();
                         }
                     }
-                return Ok(result);
+                    var list = (from d in db.Estudiantes
+                                select d).ToList();
+                    return Ok(list);
                 }
             }
             catch
             {
-                return BadRequest();
+                return BadRequest("Informacion no obtenida");
             }
         }
 
