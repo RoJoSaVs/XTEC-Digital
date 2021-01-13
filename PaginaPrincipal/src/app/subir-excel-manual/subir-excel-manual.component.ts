@@ -186,7 +186,7 @@ export class SubirExcelManualComponent implements OnInit {
   enviar() {
 
     const formated_excel= JSON.parse("["+this.Jsons.slice(0,-1)+"]");
-    console.log(JSON.stringify(formated_excel));
+    console.log(formated_excel);
     this.service.Post(formated_excel,this.excelURL).subscribe(
      response => {
         alert(response);

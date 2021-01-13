@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as XLSX from 'xlsx';
 import { ConnectionService } from '../services/connection.service';
+import { ExcelFormModel } from '../subir-excel-manual/excel-form.model';
 
 @Component({
   selector: 'app-subir-excel',
@@ -17,6 +18,7 @@ export class SubirExcelComponent {
   willDownload = false;
 
   readonly excelURL = 'https://xtecdigitalsqlbdmg5.azurewebsites.net/api/tableExcel';
+  jsonarray=[];
 
   constructor(private http: HttpClient,
     private service : ConnectionService,
@@ -37,30 +39,37 @@ export class SubirExcelComponent {
         return initial;
       }, {});
 
+      //conversion al formato de envío
 
-      //aqui puedo obtener los datos, se cortan los agregados de la biblioteca xlsx y se envia como JSON
-      const dataString = JSON.stringify(jsonData); 
-      const dataString_modified = dataString.slice(8,-1);
-      console.log(dataString_modified);
-      const ready_json = JSON.parse(dataString_modified);
+      jsonData.Data.forEach(element => {
+
+        for (var k in element)
+        {
+            if (element.hasOwnProperty(k))
+            {
+                element[k] = String(element[k]);
+            }
+        }
+        this.jsonarray.push(element)
+      });
       
 
       //envia los datos mediante el metodo post
-      this.service.Post(ready_json,this.excelURL).subscribe(
-        response => {
-           if( response ===true){
-             //this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
-             alert("Datos ingresados con éxito");
-             //window.location.reload();
-            }
-           else{
-             alert("Usuario inválido, por favor verifique los datos");
-           }
-        },
-        error => {
-          alert("no se logro conectar con el servidor");
-         }
-        );
+      this.service.Post(this.jsonarray,this.excelURL).subscribe(
+       response => {
+          alert(response);
+          if( response ===true){
+            alert("Datos ingresados con éxito, puede agregar más si lo desea");
+            //this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
+          }
+          else{
+            alert("Datos inválidos, por favor verifique que los todos los datos fueron ingresados y que los tipos son correctos (no hay letras donde debería haber números)");
+          }
+       },
+       error => {
+         alert("no se logro conectar con el servidor");
+        }
+       );
 
     }
     reader.readAsBinaryString(file);
