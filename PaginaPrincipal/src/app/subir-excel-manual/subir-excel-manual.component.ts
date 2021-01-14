@@ -195,7 +195,7 @@ export class SubirExcelManualComponent implements OnInit {
           //this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
         }
         else{
-          alert("Datos inválidos, por favor verifique que los todos los datos fueron ingresados y que los tipos son correctos (no hay letras donde debería haber números)");
+          alert("No se logró subir los datos. Por favor verifique: \n -Que todos los datos fueron ingresados \n -Que los tipos son correctos (no hay letras donde debería haber números) \n -Que no se repitan los datos \n -Carné, id-profesor e id-curso deben existir en la base de datos");
         }
      },
      error => {

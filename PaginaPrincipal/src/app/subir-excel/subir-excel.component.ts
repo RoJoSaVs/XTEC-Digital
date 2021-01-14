@@ -18,7 +18,7 @@ export class SubirExcelComponent {
   willDownload = false;
 
   readonly excelURL = 'https://xtecdigitalsqlbdmg5.azurewebsites.net/api/tableExcel';
-  jsonarray=[];
+  jsonArray=[];
 
   constructor(private http: HttpClient,
     private service : ConnectionService,
@@ -50,12 +50,13 @@ export class SubirExcelComponent {
                 element[k] = String(element[k]);
             }
         }
-        this.jsonarray.push(element)
+        this.jsonArray.push(element)
       });
       
+      console.log(this.jsonArray);
 
       //envia los datos mediante el metodo post
-      this.service.Post(this.jsonarray,this.excelURL).subscribe(
+      this.service.Post(this.jsonArray,this.excelURL).subscribe(
        response => {
           alert(response);
           if( response ===true){
@@ -63,7 +64,7 @@ export class SubirExcelComponent {
             //this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
           }
           else{
-            alert("Datos inválidos, por favor verifique que los todos los datos fueron ingresados y que los tipos son correctos (no hay letras donde debería haber números)");
+            alert("No se logró subir los datos. Por favor verifique: \n -Que todos los datos fueron ingresados \n -Que los tipos son correctos (no hay letras donde debería haber números) \n -Que no se repitan los datos \n -Carné, id-profesor e id-curso deben existir en la base de datos");
           }
        },
        error => {
