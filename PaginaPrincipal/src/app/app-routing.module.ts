@@ -1,4 +1,3 @@
-
 //imports de bibliotecas de angular
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,6 +17,8 @@ import { GestionDocumentosComponent } from './gestion-documentos/gestion-documen
 import { SubirExcelComponent } from './subir-excel/subir-excel.component';
 import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manual.component';
 import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
+import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluaciones.component';
+import { GestionCursosComponent } from './gestion-cursos/gestion-cursos.component';
 
 
 
@@ -30,8 +31,9 @@ const routes: Routes = [
   { path: 'vista-profesor/:id', component: VistaProfesorComponent },
   { path: 'vista-estudiante/:id', component: VistaEstudianteComponent },
   { path: 'subir-excel/:id', component: SubirExcelComponent },
-  { path: 'subir-excel/:id', component: SubirExcelComponent },
+  { path: 'subir-evaluaciones/:id', component: SubirEvaluacionesComponent },
   { path: 'gestion-noticias/:id', component: GestionNoticiasComponent },
+  { path: 'gestion-cursos/:id', component: GestionCursosComponent },
   { path: 'subir-manual/:id', component: SubirExcelManualComponent },
   { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
 

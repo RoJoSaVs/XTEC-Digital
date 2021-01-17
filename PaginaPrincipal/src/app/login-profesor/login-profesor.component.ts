@@ -19,9 +19,10 @@ export class LoginProfesorComponent implements OnInit {
     password: null,
   };
 
+  /*
   formPrueba: pruebaModel= {
     Carnet: "651656056",
-  };
+  };*/
 
   constructor(private http: HttpClient,
     private service : ConnectionService,

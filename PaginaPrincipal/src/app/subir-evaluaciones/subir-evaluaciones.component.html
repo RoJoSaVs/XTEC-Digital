@@ -1,0 +1,58 @@
+<div class="col-6 mx-auto">
+    <h1>Asignar evaluaciones</h1>
+    <!--form para asignar evaluaciones-->
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+    <!--input para obtener datos. Existen diferentes tipos, aquí se utilizaron texto, números,
+    fechas y selects. También permite subir archivos mediante el método post-->
+    <div class="form-group">
+      <label for="crearCuentaForm">Grupo:</label>
+      <input type="text" id="Grupo" name="Grupo" [(ngModel)]="formData.idGrupo" class="form-control"><br>
+    </div>
+
+
+    <div class="form-group">
+      <label for="crearCuentaForm">Rubro:</label>
+      <input type="text" id="Rubro" name="Rubro" [(ngModel)]="formData.rubro" class="form-control"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="crearCuentaForm">Fecha de entrega:</label>
+      <input type="date" id="Fecha" name="Fecha" [(ngModel)]="formData.fecha_de_entrega" class="form-control" value="2018-07-22" min="1900-01-01" max="2100-12-31"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="crearCuentaForm">Peso</label>
+      <input type="text" id="Peso" name="Peso" [(ngModel)]="formData.peso" class="form-control"><br>
+    </div>
+
+    <!--Permite subir un archivo desde la pc-->
+    <div class="form-group">
+        <div><label for="crearCuentaForm">Especificación de la evaluación:</label></div>
+        <div><input type="file" name="fileToUpload" id="fileToUpload" [(ngModel)]="formData.especificacion"></div>
+    </div>
+    <br>
+    <br>
+
+    <input
+  type="checkbox"
+  name="grupal"
+  [(ngModel)]="formData.grupal"
+  [ngModelOptions]="{standalone: true}"/> 
+  
+    <br>
+    <br>
+
+    <!--<div class="form-group">
+      <label for="crearCuentaForm">Grupal</label>
+      <input type="text" id="Grupal" name="Grupal" [(ngModel)]="formData.grupal" class="form-control"><br>
+    </div>-->
+ 
+    <!--botón que envia los datos del form al método on_submit en el Typescript del componente-->
+    <button class="btn btn-light btn-lg btn-block page-button" type="submit">Submit</button>
+  </form>
+  <br>
+  <br>
+  <br>
+
+</div>
