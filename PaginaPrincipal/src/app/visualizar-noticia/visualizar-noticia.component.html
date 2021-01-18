@@ -1,0 +1,30 @@
+<div class="w-100">
+    <br>
+    <br>
+    <br>
+    <div class = "container">
+        <table class = "table  table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>NoticiaId</th>
+                    <th>Titulo</th>
+                    <th>Mensaje</th>
+                    <th>Fecha</th>
+                    <th>Autor</th>
+                    <th>GrupoId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let noticia of noticias">
+                    <td><span>{{noticia.noticiaId}}</span></td>
+                    <td><span>{{noticia.titulo}}</span></td>
+                    <td><span>{{noticia.mensaje}}</span></td>
+                    <td><span>{{noticia.fecha}}</span></td>
+                    <td><span>{{noticia.autor}}</span></td>
+                    <td><span>{{noticia.grupoId}}</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+  </div>

@@ -23,6 +23,7 @@ import { SubirExcelComponent } from './subir-excel/subir-excel.component';
 import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manual.component';
 import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
 import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluaciones.component';
+import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noticia.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluacio
     SubirExcelManualComponent,
     GestionNoticiasComponent,
     SubirEvaluacionesComponent,
+    VisualizarNoticiaComponent,
   ],
   imports: [
     BrowserModule,

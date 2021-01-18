@@ -19,6 +19,8 @@ import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manu
 import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
 import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluaciones.component';
 import { GestionCursosComponent } from './gestion-cursos/gestion-cursos.component';
+import { GestionRubrosComponent } from './gestion-rubros/gestion-rubros.component';
+import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noticia.component';
 
 
 
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'subir-excel/:id', component: SubirExcelComponent },
   { path: 'subir-evaluaciones/:id', component: SubirEvaluacionesComponent },
   { path: 'gestion-noticias/:id', component: GestionNoticiasComponent },
+  { path: 'gestion-rubros/:id', component: GestionRubrosComponent },
+  { path: 'visualizar-noticias/:id', component: VisualizarNoticiaComponent },
   { path: 'gestion-cursos/:id', component: GestionCursosComponent },
   { path: 'subir-manual/:id', component: SubirExcelManualComponent },
   { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
