@@ -1,0 +1,11 @@
+<!--hace el login del estudiante-->
+<div class="col-6 mx-auto">
+    <h1>Ingrese el código del curso del que desea obtener el reporte</h1>
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">        
+        <div class="form-group">
+          <input type="text" id="grupo" name="grupo" [(ngModel)]="grupo" class="form-control"><br>
+        </div>
+        
+        <button class="btn btn-light btn-lg btn-block page-button" type="submit">Obtener reporte</button>
+      </form>
+</div>

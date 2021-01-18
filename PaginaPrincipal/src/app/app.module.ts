@@ -25,6 +25,8 @@ import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.co
 import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluaciones.component';
 import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noticia.component';
 import { ReporteEstudiantesComponent } from './reporte-estudiantes/reporte-estudiantes.component';
+import { ReporteNotasComponent } from './reporte-notas/reporte-notas.component';
+import { NotasEstudianteComponent } from './notas-estudiante/notas-estudiante.component';
 
 
 
@@ -47,6 +49,8 @@ import { ReporteEstudiantesComponent } from './reporte-estudiantes/reporte-estud
     SubirEvaluacionesComponent,
     VisualizarNoticiaComponent,
     ReporteEstudiantesComponent,
+    ReporteNotasComponent,
+    NotasEstudianteComponent,
   ],
   imports: [
     BrowserModule,
