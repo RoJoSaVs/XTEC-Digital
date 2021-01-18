@@ -21,7 +21,7 @@ import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluacio
 import { GestionCursosComponent } from './gestion-cursos/gestion-cursos.component';
 import { GestionRubrosComponent } from './gestion-rubros/gestion-rubros.component';
 import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noticia.component';
-
+import { ReporteEstudiantesComponent } from './reporte-estudiantes/reporte-estudiantes.component';
 
 
 const routes: Routes = [
@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'gestion-rubros/:id', component: GestionRubrosComponent },
   { path: 'visualizar-noticias/:id', component: VisualizarNoticiaComponent },
   { path: 'gestion-cursos/:id', component: GestionCursosComponent },
+  { path: 'reporte-estudiantes/:id', component: ReporteEstudiantesComponent },
   { path: 'subir-manual/:id', component: SubirExcelManualComponent },
   { path: 'gestion-documentos/:id', component: GestionDocumentosComponent }
 

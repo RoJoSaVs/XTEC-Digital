@@ -24,6 +24,8 @@ import { SubirExcelManualComponent } from './subir-excel-manual/subir-excel-manu
 import { GestionNoticiasComponent } from './gestion-noticias/gestion-noticias.component';
 import { SubirEvaluacionesComponent } from './subir-evaluaciones/subir-evaluaciones.component';
 import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noticia.component';
+import { ReporteEstudiantesComponent } from './reporte-estudiantes/reporte-estudiantes.component';
+
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { VisualizarNoticiaComponent } from './visualizar-noticia/visualizar-noti
     GestionNoticiasComponent,
     SubirEvaluacionesComponent,
     VisualizarNoticiaComponent,
+    ReporteEstudiantesComponent,
   ],
   imports: [
     BrowserModule,
