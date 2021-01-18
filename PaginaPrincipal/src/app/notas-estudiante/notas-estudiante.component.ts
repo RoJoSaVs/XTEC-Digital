@@ -27,7 +27,7 @@ export class NotasEstudianteComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.service.Post(null,this.rootURL+this.grupo+'/'+this.carne).subscribe(
+    this.service.Post(null,this.rootURL+this.grupo).subscribe(
      response => {
         console.log(this.rootURL+this.grupo+'/'+this.carne);
         if(response){
