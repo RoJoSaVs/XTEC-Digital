@@ -5,7 +5,7 @@
 
 CREATE TABLE CURSO(
 	codigo VARCHAR(15),
-	nombre VARCHAR(30) NOT NULL,
+	nombre VARCHAR(100) NOT NULL,
 	creditos INT NOT NULL,
 	carrera VARCHAR(30) NOT NULL,
 
@@ -43,7 +43,8 @@ CREATE TABLE GRUPO(
 CREATE TABLE CARPETA(
 	carpeta_id VARCHAR(15),
 	nombre VARCHAR(15),
-	ruta_url VARCHAR,
+	ruta_url VARCHAR(MAX),
+	--creador VARCHAR(30),
 
 	grupo_id VARCHAR(15),--FK
 
@@ -54,8 +55,9 @@ CREATE TABLE CARPETA(
 CREATE TABLE NOTICIA(
 	noticia_id VARCHAR(15),
 	titulo VARCHAR(30),
-	mensaje VARCHAR,
+	mensaje VARCHAR(MAX),
 	fecha DATE,
+	autor VARCHAR(30),
 
 	grupo_id VARCHAR(15), --FK
 
@@ -66,7 +68,7 @@ CREATE TABLE NOTICIA(
 CREATE TABLE ARCHIVO(
 	archivo_id VARCHAR(15),
 	nombre VARCHAR(30),
-	archivo_pdf VARCHAR,
+	archivo_pdf VARCHAR(MAX),
 	tamanio INT,
 	fecha DATE,
 
@@ -92,8 +94,9 @@ CREATE TABLE EVALUACION(
 	nombre VARCHAR(30),
 	fecha_entrega DATE,
 	grupal_individual BIT,
-	especificacion_archivo VARCHAR,
+	especificacion_archivo VARCHAR(MAX),
 	porcentaje INT,
+	--publico BIT,
 
 	rubro_id VARCHAR(15), --FK
 
@@ -104,9 +107,9 @@ CREATE TABLE EVALUACION(
 CREATE TABLE ENTREGABLE(
 	entregable_id VARCHAR(15),
 	nota INT,
-	observaciones VARCHAR,
-	archivo_retroalimentacion VARCHAR,
-	archivo_entregable VARCHAR,
+	observaciones VARCHAR(MAX),
+	archivo_retroalimentacion VARCHAR(MAX),
+	archivo_entregable VARCHAR(MAX),
 	publico BIT,
 	evaluado BIT,
 
