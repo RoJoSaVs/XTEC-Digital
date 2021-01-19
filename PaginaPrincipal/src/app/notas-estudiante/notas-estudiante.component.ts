@@ -26,7 +26,10 @@ export class NotasEstudianteComponent implements OnInit {
     this.carne= this.route.snapshot.paramMap.get("id")
   }
 
+  /*verifica que el curso exista en la base de datos, y procede a obtener el 
+  archivo solicitado*/
   onSubmit(form: NgForm) {
+
     this.service.Post(null,this.rootURL+this.grupo).subscribe(
      response => {
         console.log(this.rootURL+this.grupo+'/'+this.carne);

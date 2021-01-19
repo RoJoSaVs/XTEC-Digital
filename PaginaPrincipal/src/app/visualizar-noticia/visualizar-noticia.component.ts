@@ -9,6 +9,8 @@ import { NoticiasModel } from '../services/noticias.model';
   templateUrl: './visualizar-noticia.component.html',
   styleUrls: ['./visualizar-noticia.component.css']
 })
+
+/*Este procedimiento carga la tabla con noticias igual que en la gestión de noticias*/
 export class VisualizarNoticiaComponent implements OnInit {
 
   formData: NoticiasModel= {

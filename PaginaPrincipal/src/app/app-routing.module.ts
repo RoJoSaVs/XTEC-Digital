@@ -25,7 +25,7 @@ import { ReporteEstudiantesComponent } from './reporte-estudiantes/reporte-estud
 import { ReporteNotasComponent } from './reporte-notas/reporte-notas.component';
 import { NotasEstudianteComponent } from './notas-estudiante/notas-estudiante.component';
 
-
+/*se definen las rutas para cada componente*/
 const routes: Routes = [
   { path: '', component: PaginaDeInicioComponent},
   { path: 'login-profesor', component: LoginProfesorComponent},

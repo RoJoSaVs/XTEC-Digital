@@ -13,6 +13,7 @@ export class VistaEstudianteComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
   
   ngOnInit(): void {
+    /*obtiene el identificador del estudiante, que se pasa a través de la URL*/
     this.route.params.subscribe(event => {
       this.username = event.id;
      });

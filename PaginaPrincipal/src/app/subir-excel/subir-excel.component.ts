@@ -25,6 +25,7 @@ export class SubirExcelComponent {
     private router: Router,
     private route: ActivatedRoute) { }
 
+  /*convierte el excel a JSON*/
   onFileChange(ev) {
     let workBook = null;
     let jsonData = null;
@@ -53,8 +54,6 @@ export class SubirExcelComponent {
         this.jsonArray.push(element)
       });
       
-      console.log(this.jsonArray);
-
       //envia los datos mediante el metodo post
       this.service.Post(this.jsonArray,this.excelURL).subscribe(
        response => {

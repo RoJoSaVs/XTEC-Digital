@@ -30,7 +30,9 @@ export class LoginAdministradorComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.service.Post(this.formData,this.rootURL).subscribe(
      response => {
+       /*verifica si los datos son correctos, y si los son, redirige a una nueva página*/
         if( response ===true){
+          /*Dirije a la página de inicio si el login fue correcto*/
           this.router.navigate(['vista-administrador', this.formData.username.toString()]);
         }
         else{
